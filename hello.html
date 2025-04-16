@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Text Copier</title>
+  <style>
+    :root {
+      --primary: #4a90e2;
+      --bg: #f0f2f5;
+      --card-bg: #ffffff;
+      --text-color: #333;
+      --border-color: #ddd;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .container {
+      background-color: var(--card-bg);
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+      width: 100%;
+      max-width: 400px;
+      box-sizing: border-box;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: var(--text-color);
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 12px 15px;
+      font-size: 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background-color: #f9f9f9;
+      color: var(--text-color);
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 12px;
+      background-color: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #357ABD;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Text Copier</h2>
+    <div class="form-group">
+      <input type="text" id="inputBox" placeholder="Type something...">
+      <input type="text" id="outputBox" placeholder="Output will appear here" readonly>
+      <button onclick="copyText()">Submit</button>
+    </div>
+  </div>
+
+  <script>
+    function copyText() {
+      const input = document.getElementById('inputBox').value;
+      document.getElementById('outputBox').value = input;
+    }
+  </script>
+
+</body>
+</html>
